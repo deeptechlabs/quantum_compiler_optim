@@ -551,7 +551,7 @@ int main(int argc, char** argv) {
 		}
 	}
 
-	char* bName = basename(argv[1]);
+	char* bName = argv[1];
 	cout << "Circuit name: " << bName << " (requires " << nqubits << " qubits)" << endl;
 
 	cout << endl << "Before mapping: " << endl;
