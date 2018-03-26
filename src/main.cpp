@@ -1,4 +1,7 @@
 #include "stdafx.h"
+#include "rl.h"
+#include "graphs.h"
+
 
 using namespace std;
 
