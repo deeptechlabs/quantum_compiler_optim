@@ -3,7 +3,6 @@ project( ibm_qx_mapping )
 
 #Bring the headers, such as Student.h into the project
 include_directories(include)
-include_directories(src)
  
 #Can manually add the sources using the set command as follows:
 #set(SOURCES src/mainapp.cpp src/Student.cpp)
@@ -13,6 +12,4 @@ file(GLOB SOURCES "src/*.cpp")
 
 SET(CMAKE_CXX_FLAGS "-Wall -g3 -O3 -D_REENTRANT -DVERSION=\"$(VERSION)\" -std=c++11")
 
-add_executable(ibm_qx_mapping ${SOURCES)
-
-
+add_executable(ibm_qx_mapping ${SOURCES})

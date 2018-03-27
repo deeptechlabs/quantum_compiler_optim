@@ -1,11 +1,17 @@
 #include "stdafx.h"
 #include "graphs.h"
 
-void read_qasm(std::ifstream& infile);
+using namespace std;
 
-void expand_node(const vector<int>& qubits, int qubit, edge *swaps, int nswaps, int* used, node base_node, const vector<gate>& gates, int** dist, int next_layer);
+namespace mapping {
+
+	void read_qasm(std::ifstream& infile);
+
+	void expand_node(const vector<int>& qubits, int qubit, edge *swaps, int nswaps, int* used, node base_node, const vector<gate>& gates, int** dist, int next_layer);
 
 
-int getNextLayer(int layer);
+	int getNextLayer(int layer);
 
-node a_star_fixlayer(int layer, int* map, int* loc, int** dist);
+	node a_star_fixlayer(int layer, int* map, int* loc, int** dist);
+
+}

@@ -2,10 +2,9 @@
 #include "rl.h"
 #include "graphs.h"
 #include "mapping.h"
-#include "optim.h"
 
-
-using namespace std;
+using namespace mapping;
+using namespace graphs;
 
 int main(int argc, char** argv) {
 
@@ -14,11 +13,11 @@ int main(int argc, char** argv) {
 		exit(0);
 	}
 
-	build_graph_QX3();
-	build_dist_table(graph);
+	graphs::build_graph_QX3();
+	graphs::build_dist_table(graph);
 
 	ifstream infile(argv[1]);
-	read_qasm(infile);
+	mapping::read_qasm(infile);
 
 	unsigned int width = 0;
 	for (vector<vector<gate> >::iterator it = layers.begin(); it != layers.end(); it++) {
@@ -62,7 +61,7 @@ int main(int argc, char** argv) {
 
 	//Fix the mapping of each layer
 	for (int i = 0; i < layers.size(); i++) {
-		node result = a_star_fixlayer(i, qubits, locations, dist);
+		node result = mapping::a_star_fixlayer(i, qubits, locations, dist);
 
 		delete[] locations;
 		delete[] qubits;
